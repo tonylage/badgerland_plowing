@@ -1,0 +1,56 @@
+/*
+
+ /$$                                                 /$$
+| $$                                                | $$
+| $$        /$$$$$$  /$$   /$$  /$$$$$$  /$$   /$$ /$$$$$$
+| $$       |____  $$| $$  | $$ /$$__  $$| $$  | $$|_  $$_/
+| $$        /$$$$$$$| $$  | $$| $$  \ $$| $$  | $$  | $$
+| $$       /$$__  $$| $$  | $$| $$  | $$| $$  | $$  | $$ /$$
+| $$$$$$$$|  $$$$$$$|  $$$$$$$|  $$$$$$/|  $$$$$$/  |  $$$$/
+|________/ \_______/ \____  $$ \______/  \______/    \___/
+                     /$$  | $$
+                    |  $$$$$$/
+                     \______/
+
+All box model, dimensioning and responsive width setting goes here.
+Make use of the classes inuit.css gives us by including them inside
+your declarations.
+
+*/
+
+// a background image is applied to every page
+// center it and ensure aspect ratio is retained
+// technique pulled from css-tricks: http://goo.gl/ErGT
+
+html {
+    @include vendor(background-size, "cover");
+    background: url(/images/bg.jpg) $white no-repeat 80% center fixed;
+}
+
+.content {
+    article > section {
+        @include vendor("box-shadow", 1px 1px 2px $boxShadowGray);
+        border: 1px solid $grayDark;
+        background-color: $alphaWhite80;
+        background-color: $white80;
+        margin: auto;
+    }
+}
+
+header {
+    width:80%;
+    margin: 0 auto;
+}
+
+.footer {
+    hr {
+        height: 1px;
+        background-color: $red;
+        border: 0;
+    }
+}
+
+.l-centered {
+    width:80%;
+    margin: 0 auto;
+}
